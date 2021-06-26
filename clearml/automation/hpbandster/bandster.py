@@ -308,6 +308,7 @@ class OptimizerBOHB(SearchStrategy, RandomSeed):
                           run_id=fake_run_id,
                           # num_samples=self.total_max_jobs, # will be set by self._bohb_kwargs
                           min_budget=float(self._min_iteration_per_job) / float(self._max_iteration_per_job),
+                          nameserver_port=self._nameserver_port,
                           **self._bohb_kwargs)
         # scale the budget according to the successive halving iterations
         if self.budget.jobs.limit:
